@@ -11,3 +11,4 @@ if result:
     print("Phần tử đã được xoá từ Dictionary: ",my_dict)
 else:
     print("Không tìm thấy phần tử cần xoá trong Dictionary.")
+    
