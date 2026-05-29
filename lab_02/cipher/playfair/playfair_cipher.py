@@ -9,7 +9,7 @@ class PlayFairCipher:
         key = key.replace("J", "I")  # Chuyển "J" thành "I" trong khóa
         key = key.upper()
         key_set = set(key)
-        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"
         remaining_letters = [
             letter for letter in alphabet if letter not in key_set]
         matrix = list(key)

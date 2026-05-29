@@ -12,6 +12,7 @@ class CaesarCipher:
             letter_index = self.alphabet.index(letter)
             output_index = (letter_index + key ) % alphabet_len
             output_letter = self.alphabet[output_index]
+            encrypted_text.append(output_letter)
         return "".join(encrypted_text)
     def decrypt_text(self, text: str, key: int) ->str:
         alphabet_len = len(self.alphabet)
