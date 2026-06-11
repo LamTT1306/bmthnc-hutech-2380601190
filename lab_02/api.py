@@ -76,7 +76,10 @@ def playfair_encrypt():
     key = data['key']
     playfair_matrix = playfair_cipher.create_playfair_matrix(key)
     encrypted_text = playfair_cipher.playfair_encrypt(plain_text, playfair_matrix)
-    return jsonify({'encrypted_text': encrypted_text})
+    return jsonify({
+        'encrypted_text': encrypted_text,
+        'matrix': playfair_matrix
+        })
 
 @app.route('/api/playfair/decrypt', methods=['POST'])
 def playfair_decrypt():
@@ -85,7 +88,10 @@ def playfair_decrypt():
     key = data['key']
     playfair_matrix = playfair_cipher.create_playfair_matrix(key)
     decrypted_text = playfair_cipher.playfair_decrypt(cipher_text, playfair_matrix)
-    return jsonify({'decrypted_text': decrypted_text})
+    return jsonify({
+        'decrypted_text': decrypted_text,
+        'matrix': playfair_matrix
+    })
 
 if __name__ == "__main__":
     app.run(host = "0.0.0.0", port = 5000, debug = True)

@@ -3,6 +3,9 @@ class RailFenceCipher:
         pass
     
     def rail_fence_encrypt(self, plain_text, num_rails):
+        if num_rails < 2:
+            return plain_text
+            
         rails = [[] for _ in range(num_rails)]
         rail_index = 0
         direction = 1
@@ -15,7 +18,11 @@ class RailFenceCipher:
             rail_index += direction
         cipher_text = ''.join(''.join(rail) for rail in rails)
         return cipher_text
+
     def rail_fence_decrypt(self, cipher_text, num_rails):
+        if num_rails < 2:
+            return cipher_text
+            
         rail_lengths = [0] * num_rails
         rail_index = 0
         direction = 1
@@ -46,5 +53,4 @@ class RailFenceCipher:
                 direction = -1
             rail_index += direction
             
-        return plain_text 
-     
+        return plain_text
