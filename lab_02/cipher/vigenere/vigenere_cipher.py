@@ -5,7 +5,7 @@ class VigenereCipher:
     def vigenere_encrypt(self, plain_text, key):
         clean_key = "".join([c for c in key if c.isalpha()])
         if not clean_key:
-            return plain_text 
+            return "" # Tránh lỗi nếu Key trống hoặc toàn số
             
         encrypted_text = ""
         key_index = 0
@@ -17,14 +17,12 @@ class VigenereCipher:
                 else:
                     encrypted_text += chr((ord(char) - ord('a') + key_shift) % 26 + ord('a'))
                 key_index += 1
-            else:
-                encrypted_text += char
         return encrypted_text
     
     def vigenere_decrypt(self, encrypted_text, key):
         clean_key = "".join([c for c in key if c.isalpha()])
         if not clean_key:
-            return encrypted_text
+            return ""
             
         decrypted_text = ""
         key_index = 0
@@ -36,6 +34,4 @@ class VigenereCipher:
                 else:
                     decrypted_text += chr((ord(char) - ord('a') - key_shitf) % 26 + ord('a'))
                 key_index += 1
-            else:
-                decrypted_text += char
         return decrypted_text

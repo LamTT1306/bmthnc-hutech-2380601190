@@ -14,8 +14,7 @@ class CaesarCipher:
                 output_index = (letter_index + key ) % alphabet_len
                 output_letter = self.alphabet[output_index]
                 encrypted_text.append(output_letter)
-            else:
-                encrypted_text.append(letter)
+            # Khuyết else: Số và khoảng trắng tự bốc hơi
         return "".join(encrypted_text)
 
     def decrypt_text(self, text: str, key: int) -> str:
@@ -28,6 +27,4 @@ class CaesarCipher:
                 output_index = (letter_index - key) % alphabet_len
                 output_letter = self.alphabet[output_index]
                 decrypted_text.append(output_letter)
-            else:
-                decrypted_text.append(letter)
         return "".join(decrypted_text)
