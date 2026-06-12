@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui\railfence.ui'
+# Form implementation generated from reading ui file './ui/railfence.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -10,8 +10,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-import os
-os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = "../platforms"
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -82,9 +80,15 @@ class Ui_MainWindow(object):
         self.spb_rails = QtWidgets.QSpinBox(self.centralwidget)
         self.spb_rails.setGeometry(QtCore.QRect(170, 300, 631, 41))
         self.spb_rails.setObjectName("spb_rails")
+        self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(10, 10, 131, 41))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.label_5.setFont(font)
+        self.label_5.setObjectName("label_5")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 825, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 825, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -103,6 +107,7 @@ class Ui_MainWindow(object):
         self.label_4.setText(_translate("MainWindow", "Rails:"))
         self.btn_encrypt.setText(_translate("MainWindow", "Encrypt"))
         self.btn_decrypt.setText(_translate("MainWindow", "Decrypt"))
+        self.label_5.setText(_translate("MainWindow", "Lê Đức Lâm"))
 
 
 if __name__ == "__main__":

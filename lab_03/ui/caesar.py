@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui\caesar.ui'
+# Form implementation generated from reading ui file './ui/caesar.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -83,9 +83,23 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.btn_decrypt.setFont(font)
         self.btn_decrypt.setObjectName("btn_decrypt")
+        self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(10, 10, 181, 51))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(16)
+        font.setItalic(True)
+        self.label_5.setFont(font)
+        self.label_5.setObjectName("label_5")
+        self.label_6 = QtWidgets.QLabel(self.centralwidget)
+        self.label_6.setGeometry(QtCore.QRect(20, 70, 161, 21))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.label_6.setFont(font)
+        self.label_6.setObjectName("label_6")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -104,6 +118,8 @@ class Ui_MainWindow(object):
         self.label_4.setText(_translate("MainWindow", "Key:"))
         self.btn_encrypt.setText(_translate("MainWindow", "Encrypt"))
         self.btn_decrypt.setText(_translate("MainWindow", "Decrypt"))
+        self.label_5.setText(_translate("MainWindow", "Name Lê Đức Lâm"))
+        self.label_6.setText(_translate("MainWindow", "2380601190"))
 
 
 if __name__ == "__main__":
