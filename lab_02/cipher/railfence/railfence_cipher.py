@@ -3,16 +3,13 @@ class RailFenceCipher:
         pass
     
     def rail_fence_encrypt(self, plain_text, num_rails):
-        # Lọc bỏ số và khoảng trắng (chỉ giữ chữ cái)
-        clean_text = "".join([c for c in plain_text if c.isalpha()])
-        
         if num_rails < 2:
-            return clean_text
+            return plain_text
             
         rails = [[] for _ in range(num_rails)]
         rail_index = 0
         direction = 1
-        for char in clean_text:
+        for char in plain_text:
             rails[rail_index].append(char)
             if rail_index == 0:
                 direction = 1
@@ -23,17 +20,14 @@ class RailFenceCipher:
         return cipher_text
 
     def rail_fence_decrypt(self, cipher_text, num_rails):
-        # Lọc bỏ số và khoảng trắng
-        clean_cipher = "".join([c for c in cipher_text if c.isalpha()])
-        
         if num_rails < 2:
-            return clean_cipher
+            return cipher_text
             
         rail_lengths = [0] * num_rails
         rail_index = 0
         direction = 1
         
-        for _ in range(len(clean_cipher)):
+        for _ in range(len(cipher_text)):
             rail_lengths[rail_index] += 1
             if rail_index == 0:
                 direction = 1
@@ -44,13 +38,13 @@ class RailFenceCipher:
         rails = []
         start = 0
         for length in rail_lengths:
-            rails.append(clean_cipher[start:start + length])
+            rails.append(cipher_text[start:start + length])
             start += length 
         plain_text = ""
         rail_index = 0 
         direction = 1
         
-        for _ in range(len(clean_cipher)):
+        for _ in range(len(cipher_text)):
             plain_text += rails[rail_index][0]
             rails[rail_index] = rails[rail_index][1:]
             if rail_index == 0:
